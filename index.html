@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Proposal · Renaming Our Full-Tuition Award the EMU Honors Scholarship</title>
 <meta name="description" content="Internal proposal: renaming the Yoder/Webb Scholarship as the EMU Honors Scholarship." />
+<meta name="robots" content="noindex, nofollow" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
@@ -106,19 +107,6 @@
   .heritage blockquote .nm{color:#ffd98a;font-style:normal;}
   .heritage .mark{font-family:var(--font-serif);font-size:3.2rem;line-height:0;color:rgba(255,255,255,.22);position:absolute;top:26px;right:30px;}
 
-  /* discuss */
-  .discuss{background:var(--emu-blue-light);border-radius:14px;padding:28px 28px 26px;}
-  .discuss h2{margin:0 0 6px;color:var(--emu-blue-dark);font-size:1.35rem;}
-  .discuss p{color:var(--emu-blue-mid);}
-  .btns{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 8px;}
-  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sans);font-weight:600;font-size:.96rem;border-radius:6px;padding:11px 20px;text-decoration:none;cursor:pointer;border:none;transition:background .15s,transform .15s,box-shadow .15s;}
-  .btn:hover{transform:translateY(-1px);}
-  .btn-primary{background:var(--emu-blue);color:#fff;}
-  .btn-primary:hover{background:var(--emu-blue-mid);}
-  .btn-ghost{background:#fff;color:var(--emu-blue);border:1.5px solid var(--emu-blue);}
-  .btn-ghost:hover{background:#fff;box-shadow:0 4px 14px rgba(16,44,82,.12);}
-  .setup{font-size:.82rem;color:var(--emu-blue-mid);margin-top:12px;}
-  .setup code{background:#fff;border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:.85em;}
 
   /* footer */
   footer{background:var(--emu-blue-dark);color:#cfe1f8;text-align:center;padding:34px 24px 38px;margin-top:46px;}
@@ -146,12 +134,11 @@
 <nav class="tabs">
   <div class="tabs-inner" id="tabs">
     <a class="tab" href="#ask">The ask</a>
-    <a class="tab" href="#today">What it is</a>
-    <a class="tab" href="#why">Why change</a>
+    <a class="tab" href="#today">Award</a>
+    <a class="tab" href="#why">Why</a>
     <a class="tab" href="#peers">Peers</a>
     <a class="tab" href="#timeline">Timeline</a>
-    <a class="tab" href="#heritage">Heritage</a>
-    <a class="tab" href="#discuss">Discuss</a>
+    <a class="tab" href="#heritage">History</a>
   </div>
 </nav>
 
@@ -224,6 +211,9 @@
             <td data-label="Top full-tuition award"><a href="https://www.bluffton.edu/admissions/financialaid/scholarships/" target="_blank" rel="noopener">Presidential Scholarship</a></td>
             <td data-label="How it&#8217;s framed">Full-tuition award decided through the Presidential Scholarship Competition.</td>
           </tr>
+          <tr style="background:var(--emu-blue-dark);color:#eaf2fc;">
+            <td data-label="Pattern" colspan="3" style="font-weight:700;color:#fff;"><strong style="color:#fff;">Pattern:</strong> Every peer institution uses a descriptive, program-linked name — never an internal personal name families can&#8217;t decode.</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -253,46 +243,16 @@
     </div>
   </section>
 
-  <section id="discuss">
-    <div class="discuss reveal">
-      <h2>Discuss this proposal</h2>
-      <p>Share where you land, raise a question, or flag a concern. Comments thread on GitHub so the whole team can follow along.</p>
-      <div class="btns">
-        <a class="btn btn-primary" id="btn-discuss" href="#" target="_blank" rel="noopener">Open a discussion</a>
-        <a class="btn btn-ghost" id="btn-issue" href="#" target="_blank" rel="noopener">Raise a question</a>
-      </div>
-      <p class="setup">One-time setup: open <code>index.html</code> and set <code>REPO</code> at the top of the script to your repository (for example <code>emu-admissions/honors-proposal</code>). Until then, these buttons will point you here.</p>
-    </div>
-  </section>
 </main>
 
 <footer>
   <div class="tag"><span>LEAD</span> <b>TOGETHER</b></div>
   <p class="fnote">Office of Undergraduate Admissions · Eastern Mennonite University</p>
-  <p class="fnote">Draft for internal review</p>
+  <p class="fnote">Draft for internal review · v0.1 · June 2026</p>
 </footer>
 
 <script>
-  // ====== CONFIG ======
-  // Set this to your GitHub repository to wire up the Discuss buttons.
-  const REPO = "lbmullet-max/scholarship-rename";
-  // ====================
-
   (function(){
-    var configured = REPO.indexOf("your-org") === -1;
-    var dBtn = document.getElementById("btn-discuss");
-    var iBtn = document.getElementById("btn-issue");
-    if (configured){
-      dBtn.href = "https://github.com/" + REPO + "/discussions/new?category=general";
-      var title = encodeURIComponent("Feedback: EMU Honors Scholarship rename proposal");
-      var body = encodeURIComponent("Section this relates to:\n\nMy take (support / question / concern):\n\nDetails:\n");
-      iBtn.href = "https://github.com/" + REPO + "/issues/new?title=" + title + "&body=" + body + "&labels=proposal-feedback";
-    } else {
-      function notice(e){ e.preventDefault(); alert("Set REPO at the top of the script in index.html to your repository (e.g. \"emu-admissions/honors-proposal\"), then these buttons will open GitHub Discussions and Issues."); }
-      dBtn.addEventListener("click", notice);
-      iBtn.addEventListener("click", notice);
-    }
-
     // progress bar
     var bar = document.getElementById("progress");
     function onScroll(){
